@@ -3,17 +3,17 @@ from http import client
 import requests
 from dask.array import positive
 from twilio.rest import Client
-STOCK_NAME = "TSLA"
-COMPANY_NAME = "Tesla Inc"
 
-STOCK_ENDPOINT = "https://www.alphavantage.co/query"
-NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
-NEWS_API = "feb4df33cba749d9873d80c92b0b3b5e"
-TWILIO_SID = "AC5105128009de68144e9649428a332ee6"
-TWILIO_AUTH_TOKEN = "044558c04c3a55e9fe20e91e8d452f81"
+STOCK_NAME = "<STOCK NAME>"
+COMPANY_NAME = "<COMPANY NAME>"
 
+STOCK_ENDPOINT = "<STOCK ENDPOINT>"
+NEWS_ENDPOINT = "<NEWS ENDPOINT>"
+NEWS_API = "<NEWS API>"
+TWILIO_SID = "<TWILIO SID>"
+TWILIO_AUTH_TOKEN = "<TWILIO AUTHENTICATION TOKEN>"
 
-STOCK_API_KEY = "5F96DOI9DXYHB8BE"
+STOCK_API_KEY = "<STOCK API KEY>"
 stock_params = {
     "function": "TIME_SERIES_DAILY",
     "symbol": STOCK_NAME,
@@ -58,6 +58,6 @@ if abs(positive_difference_percentage) > 5:
     for article in formatted_articles:
         message = client.messages.create(
             body=article,
-            from_="whatsapp:+14155238886",
-            to="whatsapp:+919742418818",
+            from_="whatsapp:+<TWILIO WHATSAPP NUMBER>",
+            to="whatsapp:+<YOUR WHATSAPP NUMBER>",
         )
